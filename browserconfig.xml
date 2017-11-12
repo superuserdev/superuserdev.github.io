@@ -1,0 +1,20 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+{% assign tiles = site.data.head.titles %}
+<browserconfig>
+	<msapplication>
+		<tile>
+			{% if tiles['70x70'] %}<square70x70logo src="{{ tiles['70x70'] | absolute_url }}" />{% endif %}
+			{% if tiles['150x150'] %}<square150x150logo src="{{ tiles['150x150'] | absolute_url }}" />{% endif %}
+			{% if tiles['310x310'] %}<square310x310logo src="{{ tiles['310x310'] | absolute_url }}" />{% endif %}
+			{% if tiles['310x150'] %}<wide310x150 src="{{ tiles['310x150'] | absolute_url }}" />{% endif %}
+		</tile>
+		{% if tiles.color %}
+			<TileColor>{{ tiles.color }}</TileColor>
+		{% elsif site.theme-color %}
+			<TileColor>{{ site.theme-color }}</TileColor>
+		{% endif %}
+	</msapplication>
+</browserconfig>

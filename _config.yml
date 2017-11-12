@@ -1,1 +1,107 @@
-theme: jekyll-theme-slate
+author: Chris Zuber
+version: 0.1.0
+description: My spiffy description
+keywords:
+- web development
+- web design
+- progressive web apps
+- responsive design
+title: SuperUserDev
+lang: en
+dir: ltr
+theme-color: '#da532c'
+markdown: kramdown
+respository: "superuserdev/superuserdev.github.io"
+github:
+  username: superuserdev
+  repo: superuserdev.github.io
+  url: "https://superuserdev.github.io"
+twitter: SudoDevTeam
+icons: /img/icons.svg
+# gravatar: 73f08dc9b030c584e76a4c3c4e8a56c0
+#webmaster-verifications:
+#  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
+#  bing: D0C151304642EDCA64F73FE5C4B43D7A
+robots: 'follow,index'
+plugins:
+  - jekyll-gist
+  - jekyll-youtube
+  - jekyll-admin
+  - jekyll-avatar
+  # - jekyll-mentions
+  # - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-include-cache
+  # - jekyll-seo-tag
+  # - jemoji
+  # - jekyll-octicons
+appicons:
+  - src: /img/favicon.svg
+    sizes: any
+    type: image/svg+xml
+  - src: /img/icon-512.png
+    sizes: 512x512
+    type: image/png
+  - src: /img/icon-192.png
+    sizes: 192x192
+    type: image/png
+defaults:
+  -
+    scope:
+      path: /
+    values:
+      layout: default
+  -
+    scope:
+      path: /README.md
+    values:
+      layout: default
+      permalink: /index.html
+exclude:
+- "*.rb"
+- "*.gemspec"
+- "*.php"
+- "*.sh"
+- "*.csv"
+- "*.sfd"
+- "*.ai"
+- "*.psd"
+- "*.sketch"
+- "*.yml"
+- "*.lock"
+- "*.log"
+- "/css/*.md"
+- "/js/*.md"
+- "/img/*.md"
+- "/fonts/*.md"
+- "/js/*.json"
+- "/css/*.json"
+- "/img/*.json"
+- "/js/*.html"
+- Gemfile
+- node_modules/
+- docs
+- palette.xml
+- postcss.config.js
+- postcss.config.json
+- LICENSE
+- "*.config.js"
+- "/img/octicons/test"
+- "/img/octicons/*.js"
+- "/img/octicons/*.md"
+- "/img/octicons/LICENSE"
+- "/img/octicons/lib/*.css"
+- "/img/octicons/lib/octicons_gem"
+- "/img/octicons/lib/octicons_node"
+- "/img/octicons/lib/octicons_helper"
+- "/img/octicons/lib/jekyll-octicons"
+- "/img/octicons/script"
+- "/img/adwaita-icons/docs"
+- "/img/adwaita-icons/LICENSE"
+- "css/core-css/docs"
+- "css/normalize/*.html"
+- "js/std-js/docs"
+- "js/std-js/test"

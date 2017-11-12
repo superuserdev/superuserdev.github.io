@@ -1,0 +1,65 @@
+{
+  "name": "SuperUserDev",
+  "version": "0.1.0",
+  "description": "Homepage for SuperUserDev Org on GitHub",
+  "keywords": [
+    "jekyll",
+    "SuperUserDev"
+  ],
+  "author": {
+    "name": "Chris Zuber",
+    "email": "chris@chriszuber.com",
+    "url": "https://chriszuber.com"
+  },
+  "contributors": [],
+  "homepage": "",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superuserdev/superuserdev.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/superuserdev/superuserdev.github.io/issues"
+  },
+  "engines": {
+    "npm": ">=3.5"
+  },
+  "scripts": {
+    "build:all": "npm run build:icons && npm run build:css && npm run build:js",
+    "build:css": "postcss css/index.css -o css/index.min.css",
+    "build:js": "rollup -c",
+    "build:icons": "svg-sprite-generate -c img/icons.csv -o img/icons.svg",
+    "lint": "npm run lint:all",
+    "lint:all": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint 'css/**/*.css'",
+    "watch:css": "postcss css/index.css -o css/index.min.css -w",
+    "watch:js": "rollup -c -w",
+    "git:fetch": "git fetch --all --prune --tags",
+    "git:submodules": "git submodule update --init --recursive",
+    "update-remote": "git submodule update --remote --init --recursive && npm update --save",
+    "update-packages": "npm run git:submodules && npm run git:fetch && npm run build:all",
+    "test": "npm run lint",
+    "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
+},
+  "devDependencies": {
+    "eslint": "^3.10.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "postcss": "^5.2.14",
+    "postcss-cli": "^3.0.0-beta",
+    "postcss-load-config": "^1.2.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "postcss-url": "^5.1.2",
+    "svg-sprite-generator": "0.0.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}

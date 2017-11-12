@@ -1,0 +1,20 @@
+---
+layout: null
+---
+{
+	"version": "{{ site.version }}",
+	"name": "{{ site.title }}",
+	"short_name": "{{ site.short-name | default: site.title}}",
+	"description": "{{ site.description }}",
+	"start_url": "{{ site.baseurl | default: '/' }}",
+	"lang": "{{ site.lang }}",
+	"display": "{{ site.display | default: 'standalone' }}",
+	"theme_color": "{{ site.theme-color }}",
+	"background_color": "{{ site.background-color | default: '#FEFEFE' }}",
+	"icons": {{ site.appicons | jsonify }},
+	"screenshots": {{ site.screenshots | jsonify }},
+	"developer": {
+		"name": "Chris Zuber",
+		"url": "http://chriszuber.com"
+	}
+}

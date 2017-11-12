@@ -1,0 +1,16 @@
+:root {
+	--primary-color: #323232;
+	--accent-color: #25B405;
+	--accent-color-2: #176605;
+
+	--default-color: #2b2b2b;
+	--alt-color: #fefefe;
+
+	--nav-height: 6vh;
+	--backdrop-background: rgba(0,0,0,0.7);
+	--article-font: Roboto;
+}
+
+::background {
+	--backdrop-background: rgba(0,0,0,0.7);
+}

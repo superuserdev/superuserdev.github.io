@@ -1,0 +1,12 @@
+body.grid {
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: minmax(40vh, auto) var(--nav-height) auto;
+	grid-template-areas: 'header header header'
+	'nav nav nav'
+	'. main .'
+	'footer footer footer';
+}
+
+:root.layout-page > body.grid {
+	grid-template-rows: calc(100vh - var(--nav-height)) var(--nav-height) auto;
+}

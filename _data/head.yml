@@ -1,0 +1,89 @@
+meta:
+  keywords:
+    - Chris Zuber
+    - portfolio
+    - CSS3
+    - Responsive Design
+    - Progressive Web App
+    - ECMAScript
+    - PWA
+    - Jekyll
+  viewport: 'width=device-width,initial-scale=1'
+  referrer: origin-when-cross-origin
+  mobile-web-app-capable: true
+  publisher: 'https://plus.google.com/113117303106986445610'
+  author: 'https://plus.google.com/+ChrisZuber'
+  thumbnail: 'https://i.imgur.com/G8LfhUO.png'
+canonical: 'https://superuserdev.github.io'
+manifest: /manifest.json
+scripts:
+  development:
+    - src: 'https://cdn.polyfill.io/v2/polyfill.min.js'
+      type: application/javascript
+      crossorigin: anonymous
+    - src: /js/index.js
+      type: module
+      async: true
+    - src: /js/index.min.js
+      type: application/javascript
+      async: true
+      nomodule: true
+  production:
+    - src: 'https://cdn.polyfill.io/v2/polyfill.min.js'
+      type: application/javascript
+      crossorigin: anonymous
+    - src: /js/index.min.js
+      type: application/javascript
+      async: true
+stylesheets:
+  development:
+    - href: /css/index.css
+      media: all
+  production:
+    - href: /css/index.min.css
+      media: all
+preload:
+  - href: /img/icons.svg
+    as: image
+    type: image/svg+xml
+    name: icons
+  - href: /img/logos/Facebook.svg
+    as: image
+    type: image/svg+xml
+    name: Facebook
+  - href: /img/logos/twitter.svg
+    as: image
+    type: image/svg+xml
+    name: Twitter
+  - href: /img/logos/Google_plus.svg
+    as: image
+    type: image/svg+xml
+    name: Google+
+  - href: /img/logos/Reddit.svg
+    as: image
+    type: image/svg+xml
+    name: Reddit
+  - href: /img/logos/linkedin.svg
+    as: image
+    type: image/svg+xml
+    name: LinkedIn
+icons:
+  - href: /img/logos/super-user.svg
+    type: image/svg+xml
+    sizes: any
+  - href: /img/icon-32.png
+    type: image/png
+    sizes: 32x32
+  - href: /img/icon-16.png
+    type: image/png
+    sizes: 16x16
+touch-icons:
+  - href: /img/apple-touch-icon.png
+    sizes: 180x180
+windows-tile: /img/mstile-150x150.png
+mask-icon:
+  href: /img/safari-pinned-tab.svg
+  color: '#ff5722'
+titles:
+  150x150: /img/mstile-150x150.png
+  color: '#da532c'

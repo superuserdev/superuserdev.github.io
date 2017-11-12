@@ -1,0 +1,16 @@
+nav {
+	grid-area: nav;
+	background: linear-gradient(var(--accent-color), var(--accent-color-2));
+}
+
+nav svg {
+	height: var(--nav-height);
+	width: var(--nav-height);
+	padding: 0.3em;
+}
+
+nav img {
+	transform-origin: top left;
+	transform: scale(1.6) translate(0.2em);
+	filter: drop-shadow(.1em .1em 0.1em rgba(0,0,0,0.7));
+}

@@ -1,0 +1,28 @@
+<footer id="contact" class="color-alt no-text-decoration optimize-speed" role="contentinfo">
+	{% if site.github %}
+		<a href="https://github.com/{{ site.github.username }}" title="My GitHub Profile" target="_blank" rel="noopener external" class="inline-block">
+			<svg class="icon big icon-twirl transition-speed-normal transition-overshoot transition-transform">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#mark-github' }}" />
+			</svg>
+		</a>
+		<a href="https://github.com/{{ site.github.username }}/{{ site.github.repo }}" title="The GitHub Repository for this Page" target="_blank" rel="noopener external" class="inline-block">
+			<svg class="icon big icon-twirl transition-speed-normal transition-overshoot transition-transform">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#repo' }}" />
+			</svg>
+		</a>
+		<a href="https://github.com/{{ site.github.username }}/{{ site.github.repo }}/issues" title="Open issues for the repository on Github" target="_blank" rel="noopener external" class="inline-block">
+			<svg class="icon big icon-twirl transition-speed-normal transition-overshoot transition-transform">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#issue-opened' }}" />
+			</svg>
+		</a>
+	{% endif %}
+	{% if site.feed %}
+		<a href="{{ site.feed | absolute_url}}" title="Subscribe to feed" target="_blank" class="inline-block">
+			<svg class="icon big icon-twirl transition-speed-normal transition-overshoot transition-transform">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#rss' }}" />
+			</svg>
+		</a>
+	{% endif %}
+	<hr />
+	<p>©<time itemprop="copyrightYear"> {{ 'now' | date: "%Y" }}</time></p>
+</footer>
