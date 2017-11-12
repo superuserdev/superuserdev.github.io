@@ -23,6 +23,20 @@ icons: /img/icons.svg
 #  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
 #  bing: D0C151304642EDCA64F73FE5C4B43D7A
 robots: 'follow,index'
+appicons:
+  - src: /img/favicon.svg
+    sizes: any
+    type: image/svg+xml
+  - src: /img/icon-512.png
+    sizes: 512x512
+    type: image/png
+  - src: /img/icon-192.png
+    sizes: 192x192
+    type: image/png
+screenshots:
+  - src: 'https://i.imgur.com/G8LfhUO.png'
+    sizes: 1908x1048
+    type: image/png
 plugins:
   - jekyll-gist
   - jekyll-youtube
