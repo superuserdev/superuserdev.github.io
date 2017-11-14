@@ -2,15 +2,18 @@
 	--primary-color: #323232;
 	--accent-color: #25B405;
 	--accent-color-2: #176605;
+	--button-color: var(--alt-color);
+
 
 	--default-color: #2b2b2b;
 	--alt-color: #fefefe;
 
 	--nav-height: 6vh;
 	--backdrop-background: rgba(0,0,0,0.7);
+	--button-background: linear-gradient(#FFA500, #FF8C00);
 	--article-font: Roboto;
 }
 
-::background {
+::backdrop {
 	--backdrop-background: rgba(0,0,0,0.7);
 }

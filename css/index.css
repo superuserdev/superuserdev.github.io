@@ -13,3 +13,26 @@
 @import url("./main.css");
 @import url("./footer.css");
 @import url("./layout.css");
+
+.border-none, .no-border {
+	border: none;
+}
+
+.no-bg {
+	background: none;
+}
+
+main .grid {
+	--grid-row-size: 5vmax;
+	grid-gap: 0.5em;
+}
+
+main .grid .card {
+	background: linear-gradient(#FFA500, #FF8C00);
+	transform-origin: center;
+	transition: transform 400ms ease-in-out;
+}
+
+main .grid .card:hover {
+	transform: scale(1.03);
+}
