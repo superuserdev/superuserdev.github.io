@@ -19,9 +19,9 @@ github:
 twitter: SudoDevTeam
 icons: /img/icons.svg
 # gravatar: 73f08dc9b030c584e76a4c3c4e8a56c0
-#webmaster-verifications:
-#  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
-#  bing: D0C151304642EDCA64F73FE5C4B43D7A
+webmaster-verifications:
+  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
+  bing: B4BA0BE1916BB0AE8AFAC3ACC826DF57
 robots: 'follow,index'
 appicons:
   - src: /img/favicon.svg
