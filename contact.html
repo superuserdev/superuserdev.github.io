@@ -1,0 +1,52 @@
+---
+title: Contact
+layout: page
+permalink: /contact/
+---
+<div itemtype="http://schema.org/Organization" itemscope="">
+	<h1>
+		<picture class="icon" itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
+			<meta itemprop="url" content="{{ '/img/icon-192.png' | absolute_url }}" />
+			<meta itemprop="height" content="192" />
+			<meta itemprop="width" content="192" />
+			<source srcset="{{ '/img/logos/super-user.svg' | absolute_url }}" type="image/svg+xml" />
+			<img src="{{ '/img/icon-192.png' | absolute_url }}" width="49" height="49" alt="Logo" />
+		</picture>
+		<span itemprop="name">SuperUserDev</span>
+	</h1>
+	<meta itemprop="url" content="{{ site.url }}" />
+	<address itemprop="location" itemtype="http://schema.org/PostalAddress" itemscope="">
+		<span itemprop="addressLocality">Mount Vernon</span>,
+		<span itemprop="addressRegion">Washington</span>
+	</address>
+	<blockquote itemprop="description">
+		Creating the best websites by focusing on what's important &mdash; the user
+	</blockquote>
+	<div>
+		<a href="tel:+1-661-619-6712" title="+1-661-619-6712" itemprop="telephone">
+			<svg class="current-color icon">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#call-start' }}" />
+			</svg>
+			<span class="no-mobile">+1-661-619-6712</span>
+		</a>
+		<a href="mailto:chris@chriszuber.com" title="chris@chriszuber.com" itemprop="email" content="chris@chriszuber.com">
+			<svg class="current-color icon">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#mail-send' }}" />
+			</svg>
+			<span class="no-mobile">chris@chriszuber.com</span>
+		</a>
+		<hr />
+		<a href="https://twitter.com/sudodevteam" title="@SudoDevTeam" itemprop="sameAs" rel="noopener external">
+			<svg class="icon">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#twitter' }}" />
+			</svg>
+			<span class="no-mobile">@SudoDevTeam</span>
+		</a>
+		<a href="https://plus.google.com/113117303106986445610" title="Google+" itemprop="sameAs" rel="noopener external">
+			<svg class="icon">
+				<use xlink:href="{{ site.icons | absolute_url | append: '#google+' }}" />
+			</svg>
+			<span class="no-mobile">Google+</span>
+		</a>
+	</div>
+</div>
