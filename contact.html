@@ -22,7 +22,10 @@ permalink: /contact/
 	<blockquote itemprop="description">
 		Creating the best websites by focusing on what's important &mdash; the user
 	</blockquote>
-	<div>
+	<div itemprop="contactPoint" itemtype="http://schema.org/ContactPoint" itemscope="">
+		<meta itemprop="contactType" content="customer service" />
+		<meta itemprop="areaServed" content="US" />
+		<meta itemprop="availableLanguages" content="English" />
 		<a href="tel:+1-661-619-6712" title="+1-661-619-6712" itemprop="telephone">
 			<svg class="current-color icon">
 				<use xlink:href="{{ site.icons | absolute_url | append: '#call-start' }}" />
@@ -35,18 +38,18 @@ permalink: /contact/
 			</svg>
 			<span class="no-mobile">chris@chriszuber.com</span>
 		</a>
-		<hr />
-		<a href="https://twitter.com/sudodevteam" title="@SudoDevTeam" itemprop="sameAs" rel="noopener external">
-			<svg class="icon">
-				<use xlink:href="{{ site.icons | absolute_url | append: '#twitter' }}" />
-			</svg>
-			<span class="no-mobile">@SudoDevTeam</span>
-		</a>
-		<a href="https://plus.google.com/113117303106986445610" title="Google+" itemprop="sameAs" rel="noopener external">
-			<svg class="icon">
-				<use xlink:href="{{ site.icons | absolute_url | append: '#google+' }}" />
-			</svg>
-			<span class="no-mobile">Google+</span>
-		</a>
 	</div>
+	<hr />
+	<a href="https://twitter.com/sudodevteam" title="@SudoDevTeam" itemprop="sameAs" rel="noopener external">
+		<svg class="icon">
+			<use xlink:href="{{ site.icons | absolute_url | append: '#twitter' }}" />
+		</svg>
+		<span class="no-mobile">@SudoDevTeam</span>
+	</a>
+	<a href="https://plus.google.com/113117303106986445610" title="Google+" itemprop="sameAs" rel="noopener external">
+		<svg class="icon">
+			<use xlink:href="{{ site.icons | absolute_url | append: '#google+' }}" />
+		</svg>
+		<span class="no-mobile">Google+</span>
+	</a>
 </div>
