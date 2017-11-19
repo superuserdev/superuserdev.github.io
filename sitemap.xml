@@ -1,0 +1,26 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>{{ site.url }}</loc>
+		<lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+	</url>
+	{% for post in site.posts limit: 10 %}
+	<url>
+		<loc>{{ post.url | absolute_url }}</loc>
+		{% if post.updated %}
+			<lastmod>{{ post.updated | date: '%Y-%m-%d' }}</lastmod>
+		{% else %}
+			<lastmod>{{ post.date | date: '%Y-%m-%d' }}</lastmod>
+		{% endif %}
+	</url>
+	{% endfor %}
+	{% for page in site.pages %}{% if page.title and page.url != '/' %}
+	<url>
+		<loc>{{ page.url | absolute_url }}</loc>
+		<lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+	</url>
+	{% endif %}{% endfor %}
+</urlset>
