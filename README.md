@@ -1,7 +1,3 @@
----
-layout: page
-permalink: /index.html
----
 ## Welcome to GitHub Pages
 <div class="grid grid-rows-6 grid-cols-6">
   <span class="card shadow grid-span-cols-2"></span>
