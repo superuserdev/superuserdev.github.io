@@ -41,7 +41,7 @@
     "update-packages": "npm run git:submodules && npm run git:fetch && npm run build:all",
     "test": "npm run lint",
     "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
-},
+  },
   "devDependencies": {
     "eslint": "^3.10.0",
     "eslint-plugin-async-await": "0.0.0",
