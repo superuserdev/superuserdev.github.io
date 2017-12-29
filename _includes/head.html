@@ -3,6 +3,7 @@
 	<meta name="viewport" content="{% if site.data.head.meta.viewport %}{{ site.data.head.meta.viewport}}{% else %}width=device-width,initial-scale=1{% endif %}" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<title itemprop="headline">{{ page.title }} | {{ site.title }}</title>
+	<base href="{{ site.baseurl | absolute_url }}" />
 	{% if page.fb-og-type %}
 		<meta property="og:type" content="{{ page.fb-og-type }}" />
 	{% elsif page.layout == 'post' %}

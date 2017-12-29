@@ -1,11 +1,10 @@
+import './std-js/deprefixer.js';
 import './std-js/shims.js';
 import {$} from './std-js/functions.js';
 import * as Mutations from './std-js/mutations.js';
-import deprefix from './std-js/deprefixer.js';
 import webShareApi from './std-js/webShareApi.js';
 import * as shares from './share-config.js';
 
-deprefix();
 webShareApi(...Object.values(shares));
 
 async function registerServiceWorker(el) {
@@ -17,8 +16,8 @@ async function registerServiceWorker(el) {
 				throw new Error('Offline');
 			}
 
-			const url = new URL(el.dataset.serviceWorker, location.origin);
-			const reg = await navigator.serviceWorker.register(url, {scope: '/'});
+			const url = new URL(el.dataset.serviceWorker, document.baseURI);
+			const reg = await navigator.serviceWorker.register(url, {scope: document.baseURI});
 
 			if (navigator.onLine) {
 				reg.update();
@@ -37,7 +36,7 @@ async function registerServiceWorker(el) {
 
 async function readyHandler() {
 	const $doc = $(document.documentElement);
-	$('[data-service-worker]').each( el => registerServiceWorker(el));
+	$('[data-service-worker]').each(registerServiceWorker).catch(console.error);
 
 	if (Navigator.prototype.hasOwnProperty('share')) {
 		$('[data-share]').attr({hidden: false});
@@ -48,6 +47,7 @@ async function readyHandler() {
 	$doc.watch(Mutations.events, Mutations.options, Mutations.filter);
 	$doc.keypress(event => event.key === 'Escape' && $('dialog[open]').close());
 	Mutations.init();
+	$doc.watch(Mutations.events, Mutations.options, Mutations.filter);
 
 	$('[data-open]').click(event => {
 		event.preventDefault();

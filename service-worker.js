@@ -1,58 +1,59 @@
 // 2017-11-02 16:19
+const base = location.pathname.split('/').reduce((url, path, i, arr) => {
+	if (path.length !== 0 && i !== arr.length - 1) {
+		url += `/${path}`;
+	}
+	return url;
+},location.origin) + '/';
+
 const config = {
-	version: '3.2.15',
+	version: 'superuserdev.github.io',
 	caches: [
 		// Main assets
-		'/',
-		'/js/index.min.js',
-		'/css/styles/index.min.css',
-		'/img/icons.svg',
-		'/img/favicon.svg',
+		'./',
+		'./js/index.min.js',
+		'./css/styles/index.min.css',
+		'./img/icons.svg',
+		'./img/favicon.svg',
 
 		// Nav menu icons
-		'/img/adwaita-icons/actions/document-open-recent.svg',
-		'/img/adwaita-icons/actions/go-top.svg',
-		'/img/adwaita-icons/actions/view-pin.svg',
-		'/img/adwaita-icons/places/folder-publicshare.svg',
+		'./img/adwaita-icons/actions/document-open-recent.svg',
+		'./img/adwaita-icons/actions/go-top.svg',
+		'./img/adwaita-icons/actions/view-pin.svg',
+		'./img/adwaita-icons/places/folder-publicshare.svg',
 
 		// Logos
-		'/img/logos/super-user.svg',
-		'/img/logos/css3.svg',
-		'/img/logos/PHP.svg',
-		'/img/logos/svg.svg',
-		'/img/logos/Facebook.svg',
-		'/img/logos/twitter.svg',
-		'/img/logos/linkedin.svg',
-		'/img/logos/Google_plus.svg',
-		'/img/logos/Reddit.svg',
+		'./img/logos/super-user.svg',
+		'./img/logos/css3.svg',
+		'./img/logos/PHP.svg',
+		'./img/logos/svg.svg',
+		'./img/logos/Facebook.svg',
+		'./img/logos/twitter.svg',
+		'./img/logos/linkedin.svg',
+		'./img/logos/Google_plus.svg',
+		'./img/logos/Reddit.svg',
 
 		// Fonts
-		'/fonts/acme.woff',
-		'/fonts/Alice.woff',
-		'/fonts/roboto.woff',
-		'/fonts/ubuntu.woff2',
-	],
+		'./fonts/acme.woff',
+		'./fonts/Alice.woff',
+		'./fonts/roboto.woff',
+		'./fonts/ubuntu.woff2',
+	].map(path => new URL(path, base)),
 	ignored: [
-		'/service-worker.js',
-		'/manifest.json',
-	],
+		'./service-worker.js',
+		'./manifest.json',
+	].map(path => new URL(path, base)),
 	paths: [
-		'/js/',
-		'/css/',
-		'/img/',
-		'/fonts/',
-		'/posts/',
-	],
+		'./js/',
+		'./css/',
+		'./img/',
+		'./fonts/',
+		'./posts/',
+	].map(path => new URL(path, base)),
 };
 
 addEventListener('install', async () => {
 	const cache = await caches.open(config.version);
-	const keys = await caches.keys();
-	await keys.forEach(async key => {
-		if (key !== config.version) {
-			await caches.delete(key);
-		}
-	});
 	await cache.addAll(config.caches);
 	skipWaiting();
 
@@ -61,22 +62,18 @@ addEventListener('install', async () => {
 addEventListener('activate', event => {
 	event.waitUntil(async function() {
 		clients.claim();
-		const keys = await caches.keys();
-		keys.forEach(async key => {
-			if (key !== config.version) {
-				await caches.delete(key);
-			}
-		});
 	}());
 });
 
 addEventListener('fetch', async event => {
 	function isValid(req) {
 		try {
-			const url = new URL(req.url);
+			const url = new URL(req.url, base);
 			const isGet = req.method === 'GET';
 			const sameOrigin = url.origin === location.origin;
-			const isHome = ['/', '/index.html', '/index.php'].some(path => url.pathname === path);
+			const isHome = ['./', './index.html', './index.php']
+				.map(path => new URL(path, base))
+				.some(path => url.pathname === path);
 			const notIgnored = config.ignored.every(path => url.pathname !== path);
 			const allowedPath = config.paths.some(path => url.pathname.startsWith(path));
 
