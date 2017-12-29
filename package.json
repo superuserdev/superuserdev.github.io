@@ -47,7 +47,7 @@
     "eslint": "^4.14.0",
     "eslint-plugin-async-await": "0.0.0",
     "eslint-plugin-babel": "^4.1.2",
-    "stylelint": "^8.1.1",
+    "stylelint": "^8.4.0",
     "stylelint-config-recommended": "^2.0.1",
     "stylelint-config-standard": "^18.0.0"
   },
@@ -55,12 +55,12 @@
     "cssnano": "^3.10.0",
     "postcss": "^6.0.14",
     "postcss-cli": "^4.1.1",
-    "postcss-load-config": "^1.2.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
+    "postcss-load-config": "^1.2.0",
     "postcss-url": "^7.3.0",
-    "svg-sprite-generator": "0.0.7",
-    "rollup": "^0.53.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup": "^0.53.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "svg-sprite-generator": "0.0.7"
   }
 }
