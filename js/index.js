@@ -1,3 +1,4 @@
+import './std-js/deprefixer.js';
 import './std-js/shims.js';
 import './std-js/deprefixer.js';
 import {$, ready} from './std-js/functions.js';
@@ -16,8 +17,8 @@ async function registerServiceWorker(el) {
 				throw new Error('Offline');
 			}
 
-			const url = new URL(el.dataset.serviceWorker, location.origin);
-			const reg = await navigator.serviceWorker.register(url, {scope: '/'});
+			const url = new URL(el.dataset.serviceWorker, document.baseURI);
+			const reg = await navigator.serviceWorker.register(url, {scope: document.baseURI});
 
 			if (navigator.onLine) {
 				reg.update();
@@ -36,7 +37,7 @@ async function registerServiceWorker(el) {
 
 ready().then(async () => {
 	const $doc = $(document.documentElement);
-	$('[data-service-worker]').each( el => registerServiceWorker(el));
+	$('[data-service-worker]').each(registerServiceWorker).catch(console.error);
 
 	if (Navigator.prototype.hasOwnProperty('share')) {
 		$('[data-share]').attr({hidden: false});
@@ -47,6 +48,7 @@ ready().then(async () => {
 	$doc.watch(Mutations.events, Mutations.options, Mutations.filter);
 	$doc.keypress(event => event.key === 'Escape' && $('dialog[open]').close());
 	Mutations.init();
+	$doc.watch(Mutations.events, Mutations.options, Mutations.filter);
 
 	$('[data-open]').click(event => {
 		event.preventDefault();

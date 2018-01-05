@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="layout-{{ page.layout }} no-js scroll-smooth" lang="{{ site.lang }}" dir="{{ site.dir }}" itemtype="http://schema.org/{{ page.itemtype | default: 'WebPage' }}" itemscope="">
+<html class="layout-{{ page.layout }} no-js scroll-smooth" data-service-worker="service-worker.js" lang="{{ site.lang }}" dir="{{ site.dir }}" itemtype="http://schema.org/{{ page.itemtype | default: 'WebPage' }}" itemscope="">
 	{% include head.html %}
 	<body>{{ content }}</body>
 </html>
