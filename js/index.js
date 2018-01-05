@@ -1,11 +1,10 @@
 import './std-js/shims.js';
-import {$} from './std-js/functions.js';
+import './std-js/deprefixer.js';
+import {$, ready} from './std-js/functions.js';
 import * as Mutations from './std-js/mutations.js';
-import deprefix from './std-js/deprefixer.js';
 import webShareApi from './std-js/webShareApi.js';
 import * as shares from './share-config.js';
 
-deprefix();
 webShareApi(...Object.values(shares));
 
 async function registerServiceWorker(el) {
@@ -35,7 +34,7 @@ async function registerServiceWorker(el) {
 	});
 }
 
-async function readyHandler() {
+ready().then(async () => {
 	const $doc = $(document.documentElement);
 	$('[data-service-worker]').each( el => registerServiceWorker(el));
 
@@ -58,6 +57,4 @@ async function readyHandler() {
 	if (document.head.dataset.hasOwnProperty('jekyllData')) {
 		console.log(JSON.parse(decodeURIComponent(document.head.dataset.jekyllData)));
 	}
-}
-
-$(self).ready(readyHandler, {once: true});
+});
