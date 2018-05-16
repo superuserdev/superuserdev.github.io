@@ -1,5 +1,6 @@
 author: Chris Zuber
 version: 0.1.0
+timezone: America/Los_Angeles
 description: My spiffy description
 keywords:
 - web development
